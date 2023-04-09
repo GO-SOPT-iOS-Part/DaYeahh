@@ -107,7 +107,6 @@ class MainViewController: UIViewController {
         
         style()
         setLayout()
-
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -121,17 +120,14 @@ class MainViewController: UIViewController {
 private extension MainViewController {
     
     func style() {
-        
         view.backgroundColor = .white
     }
     
     func setLayout() {
         
-        [imageExView, nameLabel, nameLabelEx, nameTextField,
-         presentButton, pushButton].forEach {
-            $0.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview($0)
-        }
+        view.addSubviews(imageExView, nameLabel, nameLabelEx, nameTextField,
+                        presentButton, pushButton)
+        
         NSLayoutConstraint.activate([imageExView.topAnchor.constraint(equalTo: view.topAnchor, constant: 250),
                                      imageExView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 150),
                                      imageExView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -150),

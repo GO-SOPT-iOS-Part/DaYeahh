@@ -9,7 +9,7 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
-    var name: String?
+    public var name: String?
 
     private let nameLabel: UILabel = {
         let label = UILabel()
@@ -31,6 +31,7 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         style()
         setLayout()
         dataBind()
@@ -50,7 +51,7 @@ class SecondViewController: UIViewController {
 //    func dataBind(name: String) {
 //        nameLabel.text = name
 //    }
-    func dataBind() {
+    public func dataBind() {
         nameLabel.text = name
     }
 }
@@ -63,10 +64,7 @@ private extension SecondViewController {
     
     func setLayout() {
         
-        [nameLabel, backButton].forEach {
-            $0.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview($0)
-        }
+        view.addSubviews(nameLabel, backButton)
         
         NSLayoutConstraint.activate([nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                                      nameLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)])
