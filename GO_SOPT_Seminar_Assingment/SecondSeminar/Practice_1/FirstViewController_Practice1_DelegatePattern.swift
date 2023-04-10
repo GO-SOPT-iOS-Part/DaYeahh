@@ -1,18 +1,15 @@
 //
-//  FirstViewController_Practice1.swift
+//  FirstViewController_Practice1_DelegatePattern.swift
 //  GO_SOPT_Seminar_Assingment
 //
-//  Created by 김다예 on 2023/04/08.
+//  Created by 김다예 on 2023/04/10.
 //
 
 import UIKit
 
-import SnapKit
-import Then
+class FirstViewController_Practice1_DelegatePattern: UIViewController {
 
-class FirstViewController_Practice1_HandlerProperty: UIViewController {
-    
-    private var viewHitCount:Int = 0
+    private var hitCount:Int = 0    // SecondView에서의 클릭 횟수를 전달받을 변수
 
     private let stateLabel = UILabel().then{
         $0.text = "딱 '10번'만 누르고 와~!~!~!!!"
@@ -38,16 +35,13 @@ class FirstViewController_Practice1_HandlerProperty: UIViewController {
         style()
         setLayout()
     }
-        
 }
 
-private extension FirstViewController_Practice1_HandlerProperty{
-    
+private extension FirstViewController_Practice1_DelegatePattern{
     func style() {
         
         view.backgroundColor = .white
     }
-    
     func setLayout(){
         
         view.addSubviews(stateLabel, nextBtn)
@@ -68,22 +62,28 @@ private extension FirstViewController_Practice1_HandlerProperty{
     
     @objc
     func pushNextBtn() {
-        let secondViewController = SecondViewController_Practice1_HandlerProperty()
+        let secondViewController = SecondViewController_Practice1_DelegatePattern()
+        secondViewController.delegate = self
         secondViewController.modalPresentationStyle = .fullScreen
         
-        secondViewController.dataBind(cnt: viewHitCount)
-        secondViewController.completionHandler = { [weak self] cnt in
-            guard let self else { return }
-            self.viewHitCount = cnt
-            if (self.viewHitCount < 10){
-                self.stateLabel.text = "조금만 더 눌러봥 \(self.viewHitCount)번 눌렀어!!!"
-                self.stateLabel.asColor(targetString: "\(self.viewHitCount)번", color: UIColor.red)
-            }else{
-                self.stateLabel.text = "아이콩 \(self.viewHitCount - 10)번이나 더 눌렀넹~~"
-                self.stateLabel.asColor(targetString: "\(self.viewHitCount - 10)번", color: UIColor.red)
-                
-            }
-            self.present(secondViewController, animated: true)
+        self.present(secondViewController, animated: true)
+    }
+}
+
+extension FirstViewController_Practice1_DelegatePattern: CountProtocol{
+    func showCount() {
+        if (hitCount < 10){
+            self.stateLabel.text = "조금만 더 눌러봥 \(hitCount)번 눌렀어!!!"
+            self.stateLabel.asColor(targetString: "\(hitCount)번", color: UIColor.red)
+        }else if (hitCount == 10){
+            self.stateLabel.text = "어떻게 딱 \(hitCount)번 눌렀지?!!? 🫢"
+            self.stateLabel.asColor(targetString: "\(hitCount)번", color: UIColor.red)
+        }else{
+            self.stateLabel.text = "아이콩 \(hitCount - 10)번이나 더 눌렀넹~~"
+            self.stateLabel.asColor(targetString: "\(hitCount - 10)번", color: UIColor.red)
         }
+    }
+    func plusCount() {
+        hitCount += 1
     }
 }

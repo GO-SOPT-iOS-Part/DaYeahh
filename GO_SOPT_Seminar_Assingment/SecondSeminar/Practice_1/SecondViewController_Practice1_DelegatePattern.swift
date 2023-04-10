@@ -1,16 +1,20 @@
 //
-//  SecondViewController_Practice1.swift
+//  SecondViewController_Practice1_DelegatePattern.swift
 //  GO_SOPT_Seminar_Assingment
 //
-//  Created by 김다예 on 2023/04/08.
+//  Created by 김다예 on 2023/04/10.
 //
 
 import UIKit
 
-class SecondViewController_Practice1_HandlerProperty: UIViewController {
+protocol CountProtocol: AnyObject{
+    func showCount()
+    func plusCount()
+}
 
-    private var hitCount:Int = 0
-    var completionHandler: ((Int) -> (Void))?
+class SecondViewController_Practice1_DelegatePattern: UIViewController {
+
+    weak var delegate: CountProtocol?
 
     private lazy var clickBtn = UIButton().then{
         $0.setTitle("Hit!!", for: .normal)
@@ -31,9 +35,6 @@ class SecondViewController_Practice1_HandlerProperty: UIViewController {
         $0.addTarget(self, action: #selector(pushPriviousBtn),
                          for: .touchUpInside)
     }
-    public func dataBind(cnt: Int){
-        hitCount = cnt
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,15 +42,13 @@ class SecondViewController_Practice1_HandlerProperty: UIViewController {
         style()
         setLayout()
     }
-
 }
 
-private extension SecondViewController_Practice1_HandlerProperty{
+private extension SecondViewController_Practice1_DelegatePattern{
     
     func style() {
         view.backgroundColor = .white
     }
-    
     func setLayout(){
         
         view.addSubviews(clickBtn, priviousBtn)
@@ -71,13 +70,13 @@ private extension SecondViewController_Practice1_HandlerProperty{
     @objc
     func pushBtn() {
         self.clickBtn.animateButton()
-        hitCount += 1
+        delegate?.plusCount()
     }
     
     @objc
     func pushPriviousBtn() {
         if self.navigationController == nil {
-            completionHandler?(hitCount)
+            delegate?.showCount()
             self.dismiss(animated: true, completion: nil)
         } else {
             self.navigationController?.popViewController(animated: true)
