@@ -9,7 +9,12 @@ import UIKit
 
 class FirstViewController_Practice1_DelegatePattern: UIViewController {
 
-    private var hitCount:Int = 0    // SecondView에서의 클릭 횟수를 전달받을 변수
+    private var hitCount:Int = 0 {
+        didSet{
+            self.nextBtn.setTitle( hitCount >= 10 ? "다시 시도하기" : "누르러 가기", for: .normal)
+            self.nextBtn.backgroundColor = hitCount >= 10 ? UIColor.systemPink : UIColor.systemIndigo
+        }
+    }
 
     private let stateLabel = UILabel().then{
         $0.text = "딱 '10번'만 누르고 와~!~!~!!!"
@@ -38,10 +43,12 @@ class FirstViewController_Practice1_DelegatePattern: UIViewController {
 }
 
 private extension FirstViewController_Practice1_DelegatePattern{
+    
     func style() {
         
         view.backgroundColor = .white
     }
+    
     func setLayout(){
         
         view.addSubviews(stateLabel, nextBtn)
@@ -62,7 +69,9 @@ private extension FirstViewController_Practice1_DelegatePattern{
     
     @objc
     func pushNextBtn() {
+        
         let secondViewController = SecondViewController_Practice1_DelegatePattern()
+        hitCount = hitCount >= 10 ? 0 : hitCount
         secondViewController.delegate = self
         secondViewController.modalPresentationStyle = .fullScreen
         
@@ -71,18 +80,15 @@ private extension FirstViewController_Practice1_DelegatePattern{
 }
 
 extension FirstViewController_Practice1_DelegatePattern: CountProtocol{
+    
     func showCount() {
-        if (hitCount < 10){
-            self.stateLabel.text = "조금만 더 눌러봥 \(hitCount)번 눌렀어!!!"
-            self.stateLabel.asColor(targetString: "\(hitCount)번", color: UIColor.red)
-        }else if (hitCount == 10){
-            self.stateLabel.text = "어떻게 딱 \(hitCount)번 눌렀지?!!? 🫢"
-            self.stateLabel.asColor(targetString: "\(hitCount)번", color: UIColor.red)
-        }else{
-            self.stateLabel.text = "아이콩 \(hitCount - 10)번이나 더 눌렀넹~~"
-            self.stateLabel.asColor(targetString: "\(hitCount - 10)번", color: UIColor.red)
-        }
+        self.stateLabel.text = hitCount >= 10 ? hitCount > 10 ? "아이콩 \(hitCount)번이나 눌렀넹~~" : "정확히 \(hitCount)번 눌렀잖아!!🫢" : "조금만 더 눌러봥 \(hitCount)번 눌렀어!!!"
+        self.stateLabel.asColor(targetString: "\(hitCount)번", color: UIColor.red)
+        
+        self.nextBtn.setTitle( hitCount >= 10 ? "다시 시도하기" : "누르러 가기", for: .normal)
+        self.nextBtn.backgroundColor = hitCount >= 10 ? UIColor.systemPink : UIColor.systemIndigo
     }
+    
     func plusCount() {
         hitCount += 1
     }

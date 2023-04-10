@@ -47,8 +47,10 @@ class SecondViewController_Practice1_DelegatePattern: UIViewController {
 private extension SecondViewController_Practice1_DelegatePattern{
     
     func style() {
+        
         view.backgroundColor = .white
     }
+    
     func setLayout(){
         
         view.addSubviews(clickBtn, priviousBtn)
@@ -69,12 +71,14 @@ private extension SecondViewController_Practice1_DelegatePattern{
     
     @objc
     func pushBtn() {
+        
         self.clickBtn.animateButton()
         delegate?.plusCount()
     }
     
     @objc
     func pushPriviousBtn() {
+        
         if self.navigationController == nil {
             delegate?.showCount()
             self.dismiss(animated: true, completion: nil)
