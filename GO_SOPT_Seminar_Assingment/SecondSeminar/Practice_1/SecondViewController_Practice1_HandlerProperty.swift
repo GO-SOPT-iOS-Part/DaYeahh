@@ -7,32 +7,25 @@
 
 import UIKit
 
-class SecondViewController_Practice1: UIViewController {
+class SecondViewController_Practice1_HandlerProperty: UIViewController {
 
     var hitCount:Int = 0
     var completionHandler: ((Int) -> (Void))?
-    
-    private let mainLabel = UILabel().then{
-        $0.text = "횟수는?!"
-        $0.font = .systemFont(ofSize: 15)
-        $0.textColor = .blue
-        $0.textAlignment = .center
-    }
-    
+
     private lazy var clickBtn = UIButton().then{
-        $0.setTitle("눌러줘", for: .normal)
-        $0.backgroundColor = .systemBlue
+        $0.setTitle("Hit!!", for: .normal)
+        $0.backgroundColor = .systemIndigo
         $0.setTitleColor(.white, for: .normal)
-        $0.titleLabel?.font = .systemFont(ofSize: 16)
-        $0.layer.cornerRadius = 10
+        $0.titleLabel?.font = .systemFont(ofSize: 20)
+        $0.layer.cornerRadius = 20
         $0.addTarget(self, action: #selector(pushBtn),
                          for: .touchUpInside)
     }
     
     private lazy var priviousBtn = UIButton().then{
-        $0.setTitle("이전으로..", for: .normal)
-        $0.backgroundColor = .systemBlue
-        $0.setTitleColor(.white, for: .normal)
+        $0.setTitle("< 몇 번 눌렀는지 보러가기", for: .normal)
+        $0.backgroundColor = .systemGray6
+        $0.setTitleColor(.darkGray, for: .normal)
         $0.titleLabel?.font = .systemFont(ofSize: 16)
         $0.layer.cornerRadius = 10
         $0.addTarget(self, action: #selector(pushPriviousBtn),
@@ -44,41 +37,34 @@ class SecondViewController_Practice1: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         style()
         setLayout()
     }
 
 }
-private extension SecondViewController_Practice1{
+private extension SecondViewController_Practice1_HandlerProperty{
     
     func style() {
         
         view.backgroundColor = .white
     }
     func setLayout(){
-        [mainLabel, clickBtn, priviousBtn].forEach {
-            $0.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview($0)
-        }
-        mainLabel.snp.makeConstraints{
-            $0.leading.leading.equalToSuperview().offset(30)
-            $0.trailing.trailing.equalToSuperview().offset(-30)
+        
+        view.addSubviews(clickBtn, priviousBtn)
+        
+        clickBtn.snp.makeConstraints{
+            $0.leading.leading.equalToSuperview().offset(150)
+            $0.trailing.trailing.equalToSuperview().offset(-150)
             $0.centerY.equalToSuperview()
             $0.height.equalTo(48)
         }
-        clickBtn.snp.makeConstraints{
-            $0.top.equalTo(mainLabel.snp.bottom).offset(10)
-            $0.leading.leading.equalToSuperview().offset(150)
-            $0.trailing.trailing.equalToSuperview().offset(-150)
-            $0.height.equalTo(48)
-        }
         priviousBtn.snp.makeConstraints{
-            $0.top.equalTo(clickBtn.snp.bottom).offset(10)
-            $0.leading.leading.equalToSuperview().offset(150)
-            $0.trailing.trailing.equalToSuperview().offset(-150)
-            $0.height.equalTo(48)
+            $0.top.equalTo(clickBtn.snp.bottom).offset(30)
+            $0.leading.leading.equalToSuperview().offset(80)
+            $0.trailing.trailing.equalToSuperview().offset(-80)
+            $0.height.equalTo(32)
         }
-
     }
     
     @objc
