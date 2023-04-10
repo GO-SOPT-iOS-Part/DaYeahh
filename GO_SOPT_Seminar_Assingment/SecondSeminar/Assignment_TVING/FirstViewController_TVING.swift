@@ -12,18 +12,20 @@ class FirstViewController_TVING: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        style()
+        setLayout()
+    }
+
+}
+
+private extension FirstViewController_TVING{
+    
+    func style() {
+        
+        view.backgroundColor = .black
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setLayout() {
+        
     }
-    */
-
 }
