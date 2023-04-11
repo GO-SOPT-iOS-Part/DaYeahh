@@ -48,26 +48,26 @@ private extension ViewController{
             view.addSubview($0)
         }
         yellowView.snp.makeConstraints{
-            $0.leading.leading.equalToSuperview()
-            $0.top.top.equalToSuperview()
+            $0.leading.equalToSuperview()
+            $0.top.equalToSuperview()
             $0.width.equalTo(width_view)
             $0.height.equalTo(height_view)
         }
         greenView.snp.makeConstraints{
-            $0.trailing.trailing.equalToSuperview()
-            $0.top.top.equalToSuperview().offset(height_view)
+            $0.trailing.equalToSuperview()
+            $0.top.equalToSuperview().offset(height_view)
             $0.width.equalTo(width_view)
             $0.height.equalTo(height_view)
         }
         blackView.snp.makeConstraints{
-            $0.leading.leading.equalToSuperview()
-            $0.bottom.bottom.equalToSuperview().offset(-height_view)
+            $0.leading.equalToSuperview()
+            $0.bottom.equalToSuperview().offset(-height_view)
             $0.width.equalTo(width_view)
             $0.height.equalTo(height_view)
         }
         blueView.snp.makeConstraints{
-            $0.trailing.trailing.equalToSuperview()
-            $0.bottom.bottom.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview()
             $0.width.equalTo(width_view)
             $0.height.equalTo(height_view)
         }

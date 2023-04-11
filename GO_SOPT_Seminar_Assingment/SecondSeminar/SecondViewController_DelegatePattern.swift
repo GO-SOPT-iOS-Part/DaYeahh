@@ -90,7 +90,8 @@ private extension SecondViewController_DelegatePattern {
 //            delegate?.dataBind(text: text)
 //        }
         guard let text = nameTextField.text else { return }
-        completionHandler?(text)
+        guard let handler = completionHandler else { return }
+        handler(text)
         self.navigationController?.popViewController(animated: true)
     }
 }
