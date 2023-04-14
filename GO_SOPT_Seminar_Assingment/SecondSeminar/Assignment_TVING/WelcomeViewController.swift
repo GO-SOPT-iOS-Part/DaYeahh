@@ -27,6 +27,7 @@ class WelcomeViewController: UIViewController {
         $0.titleLabel?.textAlignment = .center
         $0.backgroundColor = .tvingRed
         $0.layer.cornerRadius = 3
+        $0.addTarget(self, action: #selector(tappedGoToMainBtn), for: .touchUpInside)
     }
 
     override func viewDidLoad() {
@@ -42,6 +43,7 @@ private extension WelcomeViewController {
     
     func style() {
         view.backgroundColor = .black
+        self.navigationItem.setHidesBackButton(true, animated: true)
     }
     
     func setLayout() {
@@ -64,5 +66,10 @@ private extension WelcomeViewController {
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.bottom.equalToSuperview().inset(66)
         }
+    }
+    
+    @objc
+    func tappedGoToMainBtn() {
+        self.navigationController?.popViewController(animated: true)
     }
 }

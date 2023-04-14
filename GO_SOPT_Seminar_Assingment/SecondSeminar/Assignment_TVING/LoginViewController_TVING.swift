@@ -49,6 +49,7 @@ class LoginViewController_TVING: UIViewController {
         $0.layer.borderColor = UIColor.tvingGray4.cgColor
         $0.layer.borderWidth = 1
         $0.layer.cornerRadius = 3
+        $0.addTarget(self, action: #selector(tappedLogInBtn), for: .touchUpInside)
     }
     
     private lazy var findIdBtn = UIButton().then {
@@ -142,24 +143,46 @@ private extension LoginViewController_TVING{
             $0.top.equalTo(logInBtn.snp.bottom).offset(31)
             $0.trailing.equalToSuperview().inset(86)
         }
+        
         askExistAccountLabel.snp.makeConstraints{
             $0.width.equalTo(140)
             $0.height.equalTo(22)
-            $0.top.equalTo(logInBtn.snp.bottom).offset(81)
+            $0.top.equalTo(findIdBtn.snp.bottom).offset(28)
             $0.leading.equalToSuperview().inset(51)
         }
         
         goToMakeNicknameBtn.snp.makeConstraints{
             $0.width.equalTo(128)
             $0.height.equalTo(22)
-            $0.top.equalTo(logInBtn.snp.bottom).offset(81)
+            $0.top.equalTo(findPasswordBtn.snp.bottom).offset(28)
             $0.trailing.equalToSuperview().inset(50)
         }
+        
         backBtn.snp.makeConstraints{
             $0.height.equalTo(15)
             $0.width.equalTo(8)
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(25)
             $0.leading.equalToSuperview().inset(24)
         }
+    }
+    
+    @objc
+    func tappedLogInBtn() {
+        let welcomViewController = WelcomeViewController()
+        saveUserEmail()
+
+        self.navigationController?.pushViewController(welcomViewController, animated: true)
+    }
+    
+    @objc
+    func tappedMakeNickNameButton() {
+        let makeNickNameViewController = AddNickNameViewController()
+        makeNickNameViewController.modalPresentationStyle = .overFullScreen
+        self.present(makeNickNameViewController, animated: false)
+    }
+    
+    func saveUserEmail(){
+//        guard let email = idTextField.text else { return }
+//        userEmail = email
     }
 }
