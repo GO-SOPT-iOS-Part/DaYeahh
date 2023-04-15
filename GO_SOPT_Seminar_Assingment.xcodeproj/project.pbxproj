@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6B1C7E1029EABEAD0034A336 /* AddNickNameBottomSheetUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C7E0F29EABEAD0034A336 /* AddNickNameBottomSheetUIView.swift */; };
+		6B1C7E1E29EB28130034A336 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C7E1D29EB28130034A336 /* LoginView.swift */; };
+		6B1C7E2129EB2A210034A336 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C7E2029EB2A210034A336 /* BaseViewController.swift */; };
+		6B1C7E2329EB302F0034A336 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C7E2229EB302F0034A336 /* WelcomeView.swift */; };
 		6B3CD8D229E32EA40062BCCB /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3CD8D129E32EA40062BCCB /* UIView+.swift */; };
 		6B3CD8D629E3BE880062BCCB /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3CD8D529E3BE880062BCCB /* UILabel+.swift */; };
 		6B3CD8D929E413C00062BCCB /* FirstViewController_Practice1_DelegatePattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3CD8D829E413C00062BCCB /* FirstViewController_Practice1_DelegatePattern.swift */; };
@@ -44,6 +47,9 @@
 
 /* Begin PBXFileReference section */
 		6B1C7E0F29EABEAD0034A336 /* AddNickNameBottomSheetUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNickNameBottomSheetUIView.swift; sourceTree = "<group>"; };
+		6B1C7E1D29EB28130034A336 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		6B1C7E2029EB2A210034A336 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		6B1C7E2229EB302F0034A336 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		6B3CD8D129E32EA40062BCCB /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		6B3CD8D529E3BE880062BCCB /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		6B3CD8D829E413C00062BCCB /* FirstViewController_Practice1_DelegatePattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController_Practice1_DelegatePattern.swift; sourceTree = "<group>"; };
@@ -95,6 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				6B1C7E0F29EABEAD0034A336 /* AddNickNameBottomSheetUIView.swift */,
+				6B1C7E1D29EB28130034A336 /* LoginView.swift */,
+				6B1C7E2229EB302F0034A336 /* WelcomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -102,8 +110,18 @@
 		6B1C7E1229EAC13B0034A336 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				6B1C7E1F29EB2A0D0034A336 /* Base */,
+				6BE8E84E29E4921900D32CAE /* Extension */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		6B1C7E1F29EB2A0D0034A336 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				6B1C7E2029EB2A210034A336 /* BaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		6B3CD8D729E3C1DB0062BCCB /* Resources */ = {
@@ -111,7 +129,6 @@
 			children = (
 				6B7DF9F529E68DB200DF7C55 /* Font */,
 				6BE8E84F29E4922D00D32CAE /* Image */,
-				6BE8E84E29E4921900D32CAE /* Extension */,
 				6BDC8E5329DFDFDF00E42086 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -331,11 +348,14 @@
 				6BDC8E4B29DFDFDE00E42086 /* AppDelegate.swift in Sources */,
 				6B1C7E1029EABEAD0034A336 /* AddNickNameBottomSheetUIView.swift in Sources */,
 				6BDC8E6029DFE15F00E42086 /* SecondViewController.swift in Sources */,
+				6B1C7E2329EB302F0034A336 /* WelcomeView.swift in Sources */,
 				6BDC8E6529E133D600E42086 /* FirstViewController_DelegatePattern.swift in Sources */,
 				6B7DF9F929E68E6100DF7C55 /* UIFont+.swift in Sources */,
 				6B3CD8D929E413C00062BCCB /* FirstViewController_Practice1_DelegatePattern.swift in Sources */,
+				6B1C7E2129EB2A210034A336 /* BaseViewController.swift in Sources */,
 				6B3CD8D629E3BE880062BCCB /* UILabel+.swift in Sources */,
 				6BDC8E7229E14EF100E42086 /* SecondViewController_Practice1_HandlerProperty.swift in Sources */,
+				6B1C7E1E29EB28130034A336 /* LoginView.swift in Sources */,
 				6BDC8E7029E148E700E42086 /* FirstViewController_Practice1_HandlerProperty.swift in Sources */,
 				6B3CD8D229E32EA40062BCCB /* UIView+.swift in Sources */,
 				6BDC8E7429E156E800E42086 /* UIButton+.swift in Sources */,
