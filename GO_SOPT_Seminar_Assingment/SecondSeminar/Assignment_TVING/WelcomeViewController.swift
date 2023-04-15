@@ -39,7 +39,7 @@ class WelcomeViewController: UIViewController {
     
 }
 
-private extension WelcomeViewController {
+extension WelcomeViewController {
     
     func style() {
         view.backgroundColor = .black

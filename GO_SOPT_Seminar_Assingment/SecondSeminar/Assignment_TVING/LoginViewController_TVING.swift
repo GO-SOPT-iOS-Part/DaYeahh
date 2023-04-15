@@ -79,18 +79,24 @@ class LoginViewController_TVING: UIViewController {
         $0.titleLabel?.font = .tvingRegular(ofSize: 14)
         $0.titleLabel?.textAlignment = .center
         $0.setUnderline()
-        $0.addTarget(self, action: #selector(tappedMakeNickNameButton), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(tappedMakeNickNameBtn), for: .touchUpInside)
     }
     
     private lazy var backBtn = UIButton().then {
         $0.setImage(UIImage(named: "btn_before"), for: .normal)
     }
-
+    
+    let nickNameBottomSheet = AddNickNameBottomSheetUIView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         style()
         setLayout()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 
 }
@@ -176,10 +182,20 @@ private extension LoginViewController_TVING{
     }
     
     @objc
-    func tappedMakeNickNameButton() {
-        let makeNickNameViewController = AddNickNameViewController()
-        makeNickNameViewController.modalPresentationStyle = .overFullScreen
-        self.present(makeNickNameViewController, animated: true)
+    func tappedMakeNickNameBtn() {
+        
+        self.view.addSubview(nickNameBottomSheet)
+        nickNameBottomSheet.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        self.view.layoutIfNeeded()
+        nickNameBottomSheet.show()
+        nickNameBottomSheet.saveNickNameBtn.addTarget(self, action: #selector(tappedSavedNickNameBtn), for: .touchUpInside)
+    }
+    
+    @objc
+    func tappedSavedNickNameBtn() {
+        nickNameBottomSheet.hide()
     }
     
     func saveUserEmail(){
