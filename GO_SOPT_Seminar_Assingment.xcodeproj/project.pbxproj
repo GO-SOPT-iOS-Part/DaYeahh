@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6B1C7E0B29E9447A0034A336 /* AddNickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C7E0A29E9447A0034A336 /* AddNickNameViewController.swift */; };
+		6B1C7E1029EABEAD0034A336 /* AddNickNameBottomSheetUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C7E0F29EABEAD0034A336 /* AddNickNameBottomSheetUIView.swift */; };
+		6B1C7E1429EAC1650034A336 /* PassThroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C7E1329EAC1650034A336 /* PassThroughView.swift */; };
 		6B3CD8D229E32EA40062BCCB /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3CD8D129E32EA40062BCCB /* UIView+.swift */; };
 		6B3CD8D629E3BE880062BCCB /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3CD8D529E3BE880062BCCB /* UILabel+.swift */; };
 		6B3CD8D929E413C00062BCCB /* FirstViewController_Practice1_DelegatePattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3CD8D829E413C00062BCCB /* FirstViewController_Practice1_DelegatePattern.swift */; };
@@ -43,7 +44,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6B1C7E0A29E9447A0034A336 /* AddNickNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNickNameViewController.swift; sourceTree = "<group>"; };
+		6B1C7E0F29EABEAD0034A336 /* AddNickNameBottomSheetUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNickNameBottomSheetUIView.swift; sourceTree = "<group>"; };
+		6B1C7E1329EAC1650034A336 /* PassThroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassThroughView.swift; sourceTree = "<group>"; };
 		6B3CD8D129E32EA40062BCCB /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		6B3CD8D529E3BE880062BCCB /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		6B3CD8D829E413C00062BCCB /* FirstViewController_Practice1_DelegatePattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController_Practice1_DelegatePattern.swift; sourceTree = "<group>"; };
@@ -91,6 +93,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B1C7E1129EABEB20034A336 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B1C7E0F29EABEAD0034A336 /* AddNickNameBottomSheetUIView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6B1C7E1229EAC13B0034A336 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6B1C7E1529EAC16C0034A336 /* Classes */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		6B1C7E1529EAC16C0034A336 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6B1C7E1329EAC1650034A336 /* PassThroughView.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		6B3CD8D729E3C1DB0062BCCB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +157,7 @@
 		6BDC8E4929DFDFDE00E42086 /* GO_SOPT_Seminar_Assingment */ = {
 			isa = PBXGroup;
 			children = (
+				6B1C7E1229EAC13B0034A336 /* Sources */,
 				6B3CD8D729E3C1DB0062BCCB /* Resources */,
 				6BDC8E6329E133A300E42086 /* SecondSeminar */,
 				6BDC8E5E29DFDFF000E42086 /* FirstSeminar */,
@@ -187,9 +214,9 @@
 		6BE8E84929E4864300D32CAE /* Assignment_TVING */ = {
 			isa = PBXGroup;
 			children = (
+				6B1C7E1129EABEB20034A336 /* View */,
 				6BE8E84A29E4868A00D32CAE /* LoginViewController_TVING.swift */,
 				6B7DFA0029E69CE700DF7C55 /* WelcomeViewController.swift */,
-				6B1C7E0A29E9447A0034A336 /* AddNickNameViewController.swift */,
 			);
 			path = Assignment_TVING;
 			sourceTree = "<group>";
@@ -313,15 +340,16 @@
 				6BDC8E4F29DFDFDE00E42086 /* MainViewController.swift in Sources */,
 				6B7DF9EA29E5953400DF7C55 /* UITextField+.swift in Sources */,
 				6BDC8E4B29DFDFDE00E42086 /* AppDelegate.swift in Sources */,
+				6B1C7E1029EABEAD0034A336 /* AddNickNameBottomSheetUIView.swift in Sources */,
 				6BDC8E6029DFE15F00E42086 /* SecondViewController.swift in Sources */,
 				6BDC8E6529E133D600E42086 /* FirstViewController_DelegatePattern.swift in Sources */,
 				6B7DF9F929E68E6100DF7C55 /* UIFont+.swift in Sources */,
 				6B3CD8D929E413C00062BCCB /* FirstViewController_Practice1_DelegatePattern.swift in Sources */,
+				6B1C7E1429EAC1650034A336 /* PassThroughView.swift in Sources */,
 				6B3CD8D629E3BE880062BCCB /* UILabel+.swift in Sources */,
 				6BDC8E7229E14EF100E42086 /* SecondViewController_Practice1_HandlerProperty.swift in Sources */,
 				6BDC8E7029E148E700E42086 /* FirstViewController_Practice1_HandlerProperty.swift in Sources */,
 				6B3CD8D229E32EA40062BCCB /* UIView+.swift in Sources */,
-				6B1C7E0B29E9447A0034A336 /* AddNickNameViewController.swift in Sources */,
 				6BDC8E7429E156E800E42086 /* UIButton+.swift in Sources */,
 				6BDC8E4D29DFDFDE00E42086 /* SceneDelegate.swift in Sources */,
 				6B7DFA0129E69CE700DF7C55 /* WelcomeViewController.swift in Sources */,

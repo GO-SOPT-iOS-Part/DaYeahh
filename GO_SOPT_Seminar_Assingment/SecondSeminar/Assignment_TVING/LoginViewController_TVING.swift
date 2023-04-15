@@ -79,6 +79,7 @@ class LoginViewController_TVING: UIViewController {
         $0.titleLabel?.font = .tvingRegular(ofSize: 14)
         $0.titleLabel?.textAlignment = .center
         $0.setUnderline()
+        $0.addTarget(self, action: #selector(tappedMakeNickNameButton), for: .touchUpInside)
     }
     
     private lazy var backBtn = UIButton().then {
@@ -178,7 +179,7 @@ private extension LoginViewController_TVING{
     func tappedMakeNickNameButton() {
         let makeNickNameViewController = AddNickNameViewController()
         makeNickNameViewController.modalPresentationStyle = .overFullScreen
-        self.present(makeNickNameViewController, animated: false)
+        self.present(makeNickNameViewController, animated: true)
     }
     
     func saveUserEmail(){
