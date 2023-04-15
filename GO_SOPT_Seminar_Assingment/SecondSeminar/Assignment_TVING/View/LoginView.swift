@@ -110,7 +110,7 @@ private extension LoginView {
         mainLabel.snp.makeConstraints{
             $0.height.equalTo(37)
             $0.top.equalTo(self.safeAreaLayoutGuide).inset(50)
-            $0.leading.trailing.equalTo(100)
+            $0.leading.trailing.equalToSuperview().inset(100)
         }
         
         idTextField.snp.makeConstraints{
