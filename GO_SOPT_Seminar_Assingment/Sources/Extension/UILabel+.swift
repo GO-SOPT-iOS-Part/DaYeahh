@@ -17,6 +17,7 @@ extension UILabel {
         attributedString.addAttributes([.font: font as Any, .foregroundColor: color as Any], range: range)
         attributedText = attributedString
     }
+    
     func underLine(from text: String?, at range: String?) {
         
             guard let text = text,

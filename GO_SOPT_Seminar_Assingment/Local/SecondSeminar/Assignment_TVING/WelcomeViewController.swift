@@ -9,11 +9,17 @@ import UIKit
 
 class WelcomeViewController: BaseViewController {
     
+    // MARK: - Property
+
     private let mainView = WelcomeView()
     
+    // MARK: - Target
+
     private func target() {
         mainView.goToMainBtn.addTarget(self, action: #selector(tappedGoToMainBtn), for: .touchUpInside)
     }
+
+    // MARK: - Lift Cycle
 
     override func loadView() {
         self.view = mainView
@@ -27,6 +33,10 @@ class WelcomeViewController: BaseViewController {
 }
 
 extension WelcomeViewController {
+    
+    public func idDataBind(idOrNick: String) {
+        mainView.welcomeLabel.text = "\(idOrNick)님\n반가워요!"
+    }
     
     @objc
     func tappedGoToMainBtn() {

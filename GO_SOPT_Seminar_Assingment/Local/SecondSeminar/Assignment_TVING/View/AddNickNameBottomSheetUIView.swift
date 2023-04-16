@@ -9,7 +9,7 @@ import UIKit
 
 class AddNickNameBottomSheetUIView: UIView {
     
-    private let bottomSheetView = UIView().then {
+    public let bottomSheetView = UIView().then {
         $0.backgroundColor = .white
         $0.layer.cornerRadius = 12
         $0.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]   // 좌우측 하단은 그대로
@@ -51,38 +51,6 @@ class AddNickNameBottomSheetUIView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func show() {
-        self.bottomSheetView.snp.remakeConstraints {
-            $0.bottom.left.right.equalToSuperview()
-            $0.top.equalToSuperview().inset(UIEdgeInsets(top: UIScreen.main.bounds.height / 2, left: 0, bottom: 0, right: 0))
-        }
-        UIView.animate(
-            withDuration: 0.25,
-            delay: 0,
-            animations: {
-                self.backgroundColor = .black.withAlphaComponent(0.5)
-                self.layoutIfNeeded()
-            }
-        )
-    }
-    
-    func hide() {
-        self.bottomSheetView.snp.remakeConstraints {
-            $0.width.equalToSuperview()
-            $0.top.equalTo(self.snp.bottom) // 초기 설정
-        }
-        UIView.animate(
-            withDuration: 0.2,
-            delay: 0,
-            animations: {
-                self.backgroundColor = .clear
-                self.layoutIfNeeded()
-                self.removeFromSuperview()
-            }
-        )
-    }
-    
 }
 
 private extension AddNickNameBottomSheetUIView {
@@ -99,8 +67,8 @@ private extension AddNickNameBottomSheetUIView {
     func setLayout() {
         
         bottomSheetView.snp.makeConstraints {
-            $0.width.equalToSuperview()
-            $0.top.equalTo(self.snp.bottom) // 초기 설정
+            $0.bottom.left.right.equalToSuperview()
+            $0.top.equalToSuperview().inset(UIEdgeInsets(top: UIScreen.main.bounds.height / 2, left: 0, bottom: 0, right: 0))
         }
 
         nickNameMainLabel.snp.makeConstraints {
