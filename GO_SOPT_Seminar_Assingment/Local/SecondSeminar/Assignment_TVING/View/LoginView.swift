@@ -18,38 +18,20 @@ class LoginView: UIView {
         $0.textAlignment = .center
     }
     
-    public let idTextField = UITextField().then {
+    public let idTextField = CustomTextField().then {
         $0.placeholder = "아이디"
         $0.setPlaceholderColor(.tvingGray2)
         $0.font = .tvingMedium(ofSize: 15)
         $0.textColor = .tvingGray2
         $0.backgroundColor = .tvingGray4
-        $0.layer.cornerRadius = 3
-        $0.setLeftRightPadding()
     }
     
-    public lazy var idClearBtn = UIButton().then {
-        $0.setImage(UIImage(named: "x-circle"), for: .normal)
-        $0.isHidden = true
-    }
-    
-    public let passwordTextField = UITextField().then {
+    public let passwordTextField = CustomPasswordTextField().then {
         $0.placeholder = "비밀번호"
         $0.setPlaceholderColor(.tvingGray2)
         $0.font = .tvingMedium(ofSize: 15)
         $0.textColor = .tvingGray2
         $0.backgroundColor = .tvingGray4
-        $0.layer.cornerRadius = 3
-        $0.setLeftRightPadding(rightPadding: 98.0)
-    }
-    
-    public lazy var passwordClearBtn = UIButton().then {
-        $0.setImage(UIImage(named: "x-circle"), for: .normal)
-        $0.isHidden = true
-    }
-    
-    public lazy var passwordHideBtn = UIButton().then {
-        $0.setImage(UIImage(named: "eye-slash.png"), for: .normal)
     }
     
     public lazy var logInBtn = UIButton().then {
@@ -118,8 +100,6 @@ private extension LoginView {
     
     func hierarchy() {
         self.addSubviews(mainLabel, idTextField, passwordTextField, logInBtn, findIdBtn, findPasswordBtn, askExistAccountLabel, goToMakeNicknameBtn, backBtn)
-        idTextField.addSubview(idClearBtn)
-        passwordTextField.addSubviews(passwordClearBtn, passwordHideBtn)
     }
     
     func setLayout() {
@@ -181,21 +161,6 @@ private extension LoginView {
             $0.width.equalTo(8)
             $0.top.equalTo(self.safeAreaLayoutGuide).inset(25)
             $0.leading.equalToSuperview().inset(24)
-        }
-        
-        idClearBtn.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
-            $0.trailing.equalToSuperview().inset(20)
-        }
-        
-        passwordHideBtn.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
-            $0.trailing.equalToSuperview().inset(20)
-        }
-        
-        passwordClearBtn.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
-            $0.trailing.equalTo(passwordHideBtn.snp.leading).offset(-16)
         }
     }
 }

@@ -33,8 +33,6 @@ public extension UITextField {
     }
     
     func isEmpty() -> Bool {
-        
-
         let empty: Bool = self.text == "" ? true : false
         return empty
     }

@@ -24,11 +24,9 @@ class LoginViewController_TVING: BaseViewController {
     private func target() {
         mainView.idTextField.delegate = self
         mainView.passwordTextField.delegate = self
+        
         mainView.idTextField.addTarget(self, action: #selector(textFieldDidChange), for: .allEditingEvents)
         mainView.passwordTextField.addTarget(self, action: #selector(textFieldDidChange), for: .allEditingEvents)
-        
-        mainView.idClearBtn.addTarget(self, action: <#T##Selector#>, for: .touchUpInside)
-        mainView.passwordClearBtn.addTarget(self, action: <#T##Selector#>, for: .touchUpInside)
         
         mainView.logInBtn.addTarget(self, action: #selector(tappedLogInBtn), for: .touchUpInside)
         mainView.goToMakeNicknameBtn.addTarget(self, action: #selector(tappedMakeNickNameBtn), for: .touchUpInside)
@@ -83,11 +81,6 @@ private extension LoginViewController_TVING {
         hideBottomSheet()
     }
     
-    @objc
-    func tappedClearBtn() {
-        
-    }
-    
     func showBottomSheet() {
         nickNameBottomSheet.snp.remakeConstraints {
             $0.edges.equalToSuperview()
@@ -125,12 +118,6 @@ extension LoginViewController_TVING: UITextFieldDelegate {
         textField.layer.borderWidth = 0.7
     }
     
-    // textField 편집 중
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        
-        return true
-    }
-    
     // textField 비활성화되면
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         textField.layer.borderWidth = 0
@@ -139,10 +126,6 @@ extension LoginViewController_TVING: UITextFieldDelegate {
     
     @objc
     func textFieldDidChange(_ textField: UITextField) {
-        mainView.idClearBtn.isHidden = mainView.idTextField.isEmpty()
-        mainView.passwordClearBtn.isHidden = mainView.passwordTextField.isEmpty()
-        
-        
         if (!mainView.idTextField.isEmpty() && !mainView.passwordTextField.isEmpty()) {
             mainView.logInBtn.isEnabled = true
             mainView.logInBtn.backgroundColor = .tvingRed

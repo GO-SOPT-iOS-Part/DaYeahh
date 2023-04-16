@@ -61,8 +61,7 @@ private extension WelcomeView {
         welcomeLabel.snp.makeConstraints {
             $0.height.equalTo(75)
             $0.top.equalTo(self.safeAreaLayoutGuide).inset(292)
-            $0.leading.equalToSuperview().inset(75)
-            $0.trailing.equalToSuperview().inset(74)
+            $0.leading.trailing.equalToSuperview().inset(20)
         }
         goToMainBtn.snp.makeConstraints {
             $0.height.equalTo(52)
