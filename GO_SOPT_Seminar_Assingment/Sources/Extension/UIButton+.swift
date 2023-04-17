@@ -21,12 +21,18 @@ extension UIButton {
     }
     
     func setUnderline() {
-            guard let title = title(for: .normal) else { return }
-            let attributedString = NSMutableAttributedString(string: title)
-            attributedString.addAttribute(.underlineStyle,
-                                          value: NSUnderlineStyle.single.rawValue,
-                                          range: NSRange(location: 0, length: title.count)
-            )
-            setAttributedTitle(attributedString, for: .normal)
-        }
+        guard let title = title(for: .normal) else { return }
+        let attributedString = NSMutableAttributedString(string: title)
+        attributedString.addAttribute(.underlineStyle,
+                                      value: NSUnderlineStyle.single.rawValue,
+                                      range: NSRange(location: 0, length: title.count)
+        )
+        setAttributedTitle(attributedString, for: .normal)
+    }
+    
+    func enableDisableButtonSet(isEnable: Bool, setColor: UIColor, setTextColor: UIColor) {
+        self.isEnabled = isEnable
+        self.backgroundColor = setColor
+        self.setTitleColor(setTextColor, for: .normal)
+    }
 }

@@ -10,6 +10,8 @@ import UIKit
 import SnapKit
 import Then
 
+// TextField with clear button
+
 class CustomTextField: UITextField {
     
     public lazy var clearButton = UIButton().then {
@@ -54,4 +56,5 @@ class CustomTextField: UITextField {
     func textFieldDidChange(_ textField: UITextField) {
         self.clearButton.isHidden = self.isEmpty() || !self.isEditing
     }
+    
 }

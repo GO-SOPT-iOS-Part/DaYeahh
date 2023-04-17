@@ -15,10 +15,10 @@ class WelcomeView: UIView {
     
     public let welcomeLabel = UILabel().then {
         $0.text = "님\n반가워요!"
-        $0.numberOfLines = 2
-        $0.font = .tvingSemiBold(ofSize: 23)
         $0.textColor = .white
         $0.textAlignment = .center
+        $0.numberOfLines = 3
+        $0.font = .tvingSemiBold(ofSize: 23)
     }
     
     public lazy var goToMainBtn = UIButton().then {
@@ -60,8 +60,8 @@ private extension WelcomeView {
         }
         welcomeLabel.snp.makeConstraints {
             $0.height.equalTo(75)
-            $0.top.equalTo(self.safeAreaLayoutGuide).inset(292)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.top.equalTo(mainImgView.snp.bottom).offset(60)
+            $0.leading.trailing.equalToSuperview().inset(10)
         }
         goToMainBtn.snp.makeConstraints {
             $0.height.equalTo(52)

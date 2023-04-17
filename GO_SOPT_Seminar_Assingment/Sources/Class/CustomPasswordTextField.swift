@@ -10,6 +10,8 @@ import UIKit
 import SnapKit
 import Then
 
+// Password TextField - clear, security button
+
 class CustomPasswordTextField: UITextField {
     
     private var securityTrue: Bool = true
@@ -42,6 +44,7 @@ class CustomPasswordTextField: UITextField {
         self.layer.cornerRadius = 3
         self.isSecureTextEntry = securityTrue
         self.autocapitalizationType = .none
+        self.keyboardType = .asciiCapable
     }
     
     func setLayout() {

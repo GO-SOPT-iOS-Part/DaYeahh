@@ -9,6 +9,8 @@ import UIKit
 
 class AddNickNameBottomSheetUIView: UIView {
     
+    public let bottomSheetHeight = UIScreen.main.bounds.height / 2
+    
     public let bottomSheetView = UIView().then {
         $0.backgroundColor = .white
         $0.layer.cornerRadius = 12
@@ -20,24 +22,22 @@ class AddNickNameBottomSheetUIView: UIView {
         $0.font = .tvingMedium(ofSize: 23)
     }
     
-    public let nickNameTextField = UITextField().then {
+    public let nickNameTextField = CustomTextField().then {
         $0.placeholder = "닉네임"
         $0.setPlaceholderColor(.tvingGray1)
         $0.textColor = .black
         $0.backgroundColor = .tvingGray2
         $0.font = .tvingMedium(ofSize: 14)
-        $0.layer.cornerRadius = 3
-        $0.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 22.0, height: 0.0))
-        $0.leftViewMode = .always
     }
     
     public lazy var saveNickNameBtn = UIButton().then {
         $0.setTitle("저장하기", for: .normal)
         $0.titleLabel?.font = .tvingMedium(ofSize: 16)
         $0.titleLabel?.textAlignment = .center
-        $0.titleLabel?.textColor = .white
-        $0.backgroundColor = .tvingRed
+        $0.titleLabel?.textColor = .tvingGray2
+        $0.backgroundColor = .black
         $0.layer.cornerRadius = 12
+        $0.isEnabled = false
     }
     
     override init(frame: CGRect) {
@@ -67,8 +67,9 @@ private extension AddNickNameBottomSheetUIView {
     func setLayout() {
         
         bottomSheetView.snp.makeConstraints {
+            $0.height.equalTo(bottomSheetHeight)
             $0.bottom.left.right.equalToSuperview()
-            $0.top.equalToSuperview().inset(UIEdgeInsets(top: UIScreen.main.bounds.height / 2, left: 0, bottom: 0, right: 0))
+            $0.top.equalToSuperview().inset(UIEdgeInsets(top: UIScreen.main.bounds.height - bottomSheetHeight, left: 0, bottom: 0, right: 0))
         }
 
         nickNameMainLabel.snp.makeConstraints {
@@ -84,7 +85,7 @@ private extension AddNickNameBottomSheetUIView {
 
         saveNickNameBtn.snp.makeConstraints {
             $0.height.equalTo(52)
-            $0.top.equalTo(bottomSheetView.snp.top).offset(UIScreen.main.bounds.height / 2 - 72)
+            $0.bottom.equalToSuperview().inset(20)
             $0.leading.trailing.equalToSuperview().inset(20)
         }
     }

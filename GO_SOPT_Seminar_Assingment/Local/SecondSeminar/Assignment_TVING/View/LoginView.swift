@@ -19,11 +19,19 @@ class LoginView: UIView {
     }
     
     public let idTextField = CustomTextField().then {
-        $0.placeholder = "아이디"
+        $0.placeholder = "이메일"
         $0.setPlaceholderColor(.tvingGray2)
         $0.font = .tvingMedium(ofSize: 15)
         $0.textColor = .tvingGray2
         $0.backgroundColor = .tvingGray4
+        $0.keyboardType = .emailAddress
+    }
+    
+    public let idInvalidLabel = UILabel().then {
+        $0.textColor = .systemRed
+        $0.font = .systemFont(ofSize: 12)
+        $0.text = "* 올바르지 않은 이메일 형식입니다 😭"
+        $0.isHidden = true
     }
     
     public let passwordTextField = CustomPasswordTextField().then {
@@ -32,6 +40,7 @@ class LoginView: UIView {
         $0.font = .tvingMedium(ofSize: 15)
         $0.textColor = .tvingGray2
         $0.backgroundColor = .tvingGray4
+        $0.keyboardType = .asciiCapable
     }
     
     public lazy var logInBtn = UIButton().then {
@@ -99,7 +108,7 @@ private extension LoginView {
     }
     
     func hierarchy() {
-        self.addSubviews(mainLabel, idTextField, passwordTextField, logInBtn, findIdBtn, findPasswordBtn, askExistAccountLabel, goToMakeNicknameBtn, backBtn)
+        self.addSubviews(mainLabel, idTextField, idInvalidLabel, passwordTextField, logInBtn, findIdBtn, findPasswordBtn, askExistAccountLabel, goToMakeNicknameBtn, backBtn)
     }
     
     func setLayout() {
@@ -139,14 +148,14 @@ private extension LoginView {
             $0.width.equalTo(80)
             $0.height.equalTo(22)
             $0.top.equalTo(logInBtn.snp.bottom).offset(31)
-            $0.trailing.equalToSuperview().inset(86)
+            $0.trailing.equalToSuperview().inset(85)
         }
         
         askExistAccountLabel.snp.makeConstraints{
             $0.width.equalTo(140)
             $0.height.equalTo(22)
             $0.top.equalTo(findIdBtn.snp.bottom).offset(28)
-            $0.leading.equalToSuperview().inset(51)
+            $0.leading.equalToSuperview().inset(50)
         }
         
         goToMakeNicknameBtn.snp.makeConstraints{

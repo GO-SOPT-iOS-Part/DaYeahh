@@ -15,14 +15,14 @@
 		6B3CD8D629E3BE880062BCCB /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3CD8D529E3BE880062BCCB /* UILabel+.swift */; };
 		6B3CD8D929E413C00062BCCB /* FirstViewController_Practice1_DelegatePattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3CD8D829E413C00062BCCB /* FirstViewController_Practice1_DelegatePattern.swift */; };
 		6B3CD8DB29E413E00062BCCB /* SecondViewController_Practice1_DelegatePattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3CD8DA29E413E00062BCCB /* SecondViewController_Practice1_DelegatePattern.swift */; };
-		6B56CC7B29EC02B00065D3BA /* TvingUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B56CC7A29EC02B00065D3BA /* TvingUser.swift */; };
 		6B56CC8229EC3C800065D3BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B56CC8129EC3C800065D3BA /* Main.storyboard */; };
 		6B56CC8429EC3C9F0065D3BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B56CC8329EC3C9F0065D3BA /* LaunchScreen.storyboard */; };
 		6B56CC8629EC5B0E0065D3BA /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B56CC8529EC5B0E0065D3BA /* CustomTextField.swift */; };
-		6B56CC8E29EC6B4D0065D3BA /* eye-slash.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B56CC8D29EC6B4D0065D3BA /* eye-slash.png */; };
-		6B56CC9029EC6B5B0065D3BA /* eye-non-slash.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B56CC8F29EC6B5B0065D3BA /* eye-non-slash.png */; };
-		6B56CC9829EC6C960065D3BA /* x-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B56CC9729EC6C960065D3BA /* x-circle.png */; };
 		6B56CC9A29EC79C30065D3BA /* CustomPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B56CC9929EC79C30065D3BA /* CustomPasswordTextField.swift */; };
+		6B56CCA829ED1F060065D3BA /* x-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B56CCA729ED1F050065D3BA /* x-circle.png */; };
+		6B56CCAA29ED1FA60065D3BA /* eye-slash.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B56CCA929ED1FA60065D3BA /* eye-slash.png */; };
+		6B56CCAC29ED1FEB0065D3BA /* eye-non-slash.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B56CCAB29ED1FEB0065D3BA /* eye-non-slash.png */; };
+		6B56CCAE29ED20500065D3BA /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B56CCAD29ED20500065D3BA /* String+.swift */; };
 		6B7DF9EA29E5953400DF7C55 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7DF9E929E5953400DF7C55 /* UITextField+.swift */; };
 		6B7DF9F929E68E6100DF7C55 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7DF9F829E68E6100DF7C55 /* UIFont+.swift */; };
 		6B7DF9FC29E6935D00DF7C55 /* Pretendard-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B7DF9FA29E6935D00DF7C55 /* Pretendard-Medium.ttf */; };
@@ -58,14 +58,14 @@
 		6B3CD8D529E3BE880062BCCB /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		6B3CD8D829E413C00062BCCB /* FirstViewController_Practice1_DelegatePattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController_Practice1_DelegatePattern.swift; sourceTree = "<group>"; };
 		6B3CD8DA29E413E00062BCCB /* SecondViewController_Practice1_DelegatePattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController_Practice1_DelegatePattern.swift; sourceTree = "<group>"; };
-		6B56CC7A29EC02B00065D3BA /* TvingUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvingUser.swift; sourceTree = "<group>"; };
 		6B56CC8129EC3C800065D3BA /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		6B56CC8329EC3C9F0065D3BA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B56CC8529EC5B0E0065D3BA /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		6B56CC8D29EC6B4D0065D3BA /* eye-slash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eye-slash.png"; sourceTree = "<group>"; };
-		6B56CC8F29EC6B5B0065D3BA /* eye-non-slash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eye-non-slash.png"; sourceTree = "<group>"; };
-		6B56CC9729EC6C960065D3BA /* x-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "x-circle.png"; path = "../../../../../../../Downloads/Stroke 2 4/x-circle.png"; sourceTree = "<group>"; };
 		6B56CC9929EC79C30065D3BA /* CustomPasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPasswordTextField.swift; sourceTree = "<group>"; };
+		6B56CCA729ED1F050065D3BA /* x-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "x-circle.png"; path = "../../../../../../../Downloads/x-circle.png"; sourceTree = "<group>"; };
+		6B56CCA929ED1FA60065D3BA /* eye-slash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "eye-slash.png"; path = "../../../../../../../Downloads/Stroke 2/eye-slash.png"; sourceTree = "<group>"; };
+		6B56CCAB29ED1FEB0065D3BA /* eye-non-slash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "eye-non-slash.png"; path = "../../../../../../../Downloads/Stroke 2 2/eye-non-slash.png"; sourceTree = "<group>"; };
+		6B56CCAD29ED20500065D3BA /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		6B7DF9E929E5953400DF7C55 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		6B7DF9F829E68E6100DF7C55 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		6B7DF9FA29E6935D00DF7C55 /* Pretendard-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Medium.ttf"; path = "../../../../../../../Downloads/Pretendard-1.3.6/public/static/alternative/Pretendard-Medium.ttf"; sourceTree = "<group>"; };
@@ -165,7 +165,6 @@
 		6B56CC7E29EC39630065D3BA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6B56CC7A29EC02B00065D3BA /* TvingUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -271,6 +270,7 @@
 				6BE8E84C29E4901100D32CAE /* UIColor+.swift */,
 				6B7DF9E929E5953400DF7C55 /* UITextField+.swift */,
 				6B7DF9F829E68E6100DF7C55 /* UIFont+.swift */,
+				6B56CCAD29ED20500065D3BA /* String+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -278,9 +278,9 @@
 		6BE8E84F29E4922D00D32CAE /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				6B56CC8D29EC6B4D0065D3BA /* eye-slash.png */,
-				6B56CC9729EC6C960065D3BA /* x-circle.png */,
-				6B56CC8F29EC6B5B0065D3BA /* eye-non-slash.png */,
+				6B56CCA929ED1FA60065D3BA /* eye-slash.png */,
+				6B56CCAB29ED1FEB0065D3BA /* eye-non-slash.png */,
+				6B56CCA729ED1F050065D3BA /* x-circle.png */,
 				6BE8E85629E4934800D32CAE /* btn_before.png */,
 				6BE8E85829E4935100D32CAE /* tiving_logo.png */,
 			);
@@ -356,14 +356,14 @@
 				6B7DF9FF29E6939B00DF7C55 /* Pretendard-Regular.ttf in Resources */,
 				6B7DF9FD29E6935D00DF7C55 /* Pretendard-SemiBold.ttf in Resources */,
 				6BE8E85729E4934800D32CAE /* btn_before.png in Resources */,
-				6B56CC9029EC6B5B0065D3BA /* eye-non-slash.png in Resources */,
+				6B56CCAA29ED1FA60065D3BA /* eye-slash.png in Resources */,
 				6B56CC8229EC3C800065D3BA /* Main.storyboard in Resources */,
 				6BE8E85929E4935100D32CAE /* tiving_logo.png in Resources */,
+				6B56CCA829ED1F060065D3BA /* x-circle.png in Resources */,
+				6B56CCAC29ED1FEB0065D3BA /* eye-non-slash.png in Resources */,
 				6BDC8E6229DFE1DF00E42086 /* sopt.png in Resources */,
 				6B56CC8429EC3C9F0065D3BA /* LaunchScreen.storyboard in Resources */,
-				6B56CC9829EC6C960065D3BA /* x-circle.png in Resources */,
 				6BDC8E5429DFDFDF00E42086 /* Assets.xcassets in Resources */,
-				6B56CC8E29EC6B4D0065D3BA /* eye-slash.png in Resources */,
 				6B7DF9FC29E6935D00DF7C55 /* Pretendard-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,6 +385,7 @@
 				6BDC8E4B29DFDFDE00E42086 /* AppDelegate.swift in Sources */,
 				6B1C7E1029EABEAD0034A336 /* AddNickNameBottomSheetUIView.swift in Sources */,
 				6B56CC8629EC5B0E0065D3BA /* CustomTextField.swift in Sources */,
+				6B56CCAE29ED20500065D3BA /* String+.swift in Sources */,
 				6BDC8E6029DFE15F00E42086 /* SecondViewController.swift in Sources */,
 				6B56CC9A29EC79C30065D3BA /* CustomPasswordTextField.swift in Sources */,
 				6B1C7E2329EB302F0034A336 /* WelcomeView.swift in Sources */,
@@ -392,7 +393,6 @@
 				6B7DF9F929E68E6100DF7C55 /* UIFont+.swift in Sources */,
 				6B3CD8D929E413C00062BCCB /* FirstViewController_Practice1_DelegatePattern.swift in Sources */,
 				6B1C7E2129EB2A210034A336 /* BaseViewController.swift in Sources */,
-				6B56CC7B29EC02B00065D3BA /* TvingUser.swift in Sources */,
 				6B3CD8D629E3BE880062BCCB /* UILabel+.swift in Sources */,
 				6BDC8E7229E14EF100E42086 /* SecondViewController_Practice1_HandlerProperty.swift in Sources */,
 				6B1C7E1E29EB28130034A336 /* LoginView.swift in Sources */,
