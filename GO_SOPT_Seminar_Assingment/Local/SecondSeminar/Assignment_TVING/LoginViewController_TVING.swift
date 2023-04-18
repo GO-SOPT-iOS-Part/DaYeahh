@@ -147,6 +147,7 @@ private extension LoginViewController_TVING {
     func initView() {
         mainView.idTextField.text = ""
         mainView.passwordTextField.text = ""
+        mainView.logInBtn.enableDisableButtonSet(isEnable: false, setColor: .black, setTextColor: .tvingGray2)
         nickNameBottomSheet.nickNameTextField.text = ""
     }
     
