@@ -15,7 +15,7 @@
 		6B3CD8D629E3BE880062BCCB /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3CD8D529E3BE880062BCCB /* UILabel+.swift */; };
 		6B3CD8D929E413C00062BCCB /* FirstViewController_Practice1_DelegatePattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3CD8D829E413C00062BCCB /* FirstViewController_Practice1_DelegatePattern.swift */; };
 		6B3CD8DB29E413E00062BCCB /* SecondViewController_Practice1_DelegatePattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3CD8DA29E413E00062BCCB /* SecondViewController_Practice1_DelegatePattern.swift */; };
-		6B56CC8229EC3C800065D3BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B56CC8129EC3C800065D3BA /* Main.storyboard */; };
+		6B50BE5029F130F300320D37 /* BottomSheetHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B50BE4F29F130F300320D37 /* BottomSheetHeight.swift */; };
 		6B56CC8429EC3C9F0065D3BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B56CC8329EC3C9F0065D3BA /* LaunchScreen.storyboard */; };
 		6B56CC8629EC5B0E0065D3BA /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B56CC8529EC5B0E0065D3BA /* CustomTextField.swift */; };
 		6B56CC9A29EC79C30065D3BA /* CustomPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B56CC9929EC79C30065D3BA /* CustomPasswordTextField.swift */; };
@@ -58,7 +58,7 @@
 		6B3CD8D529E3BE880062BCCB /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		6B3CD8D829E413C00062BCCB /* FirstViewController_Practice1_DelegatePattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController_Practice1_DelegatePattern.swift; sourceTree = "<group>"; };
 		6B3CD8DA29E413E00062BCCB /* SecondViewController_Practice1_DelegatePattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController_Practice1_DelegatePattern.swift; sourceTree = "<group>"; };
-		6B56CC8129EC3C800065D3BA /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		6B50BE4F29F130F300320D37 /* BottomSheetHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetHeight.swift; sourceTree = "<group>"; };
 		6B56CC8329EC3C9F0065D3BA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B56CC8529EC5B0E0065D3BA /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		6B56CC9929EC79C30065D3BA /* CustomPasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPasswordTextField.swift; sourceTree = "<group>"; };
@@ -118,8 +118,7 @@
 		6B1C7E1229EAC13B0034A336 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				6B56CC7E29EC39630065D3BA /* Model */,
-				6B56CC7C29EC02B50065D3BA /* Class */,
+				6B56CC7C29EC02B50065D3BA /* Class & Structure & Enum */,
 				6B1C7E1F29EB2A0D0034A336 /* Base */,
 				6BE8E84E29E4921900D32CAE /* Extension */,
 			);
@@ -144,13 +143,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		6B56CC7C29EC02B50065D3BA /* Class */ = {
+		6B56CC7C29EC02B50065D3BA /* Class & Structure & Enum */ = {
 			isa = PBXGroup;
 			children = (
 				6B56CC8529EC5B0E0065D3BA /* CustomTextField.swift */,
 				6B56CC9929EC79C30065D3BA /* CustomPasswordTextField.swift */,
+				6B50BE4F29F130F300320D37 /* BottomSheetHeight.swift */,
 			);
-			path = Class;
+			path = "Class & Structure & Enum";
 			sourceTree = "<group>";
 		};
 		6B56CC7D29EC38D20065D3BA /* Local */ = {
@@ -160,13 +160,6 @@
 				6BDC8E6329E133A300E42086 /* SecondSeminar */,
 			);
 			path = Local;
-			sourceTree = "<group>";
-		};
-		6B56CC7E29EC39630065D3BA /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		6B7DF9F529E68DB200DF7C55 /* Font */ = {
@@ -204,7 +197,6 @@
 				6BDC8E4A29DFDFDE00E42086 /* AppDelegate.swift */,
 				6BDC8E4C29DFDFDE00E42086 /* SceneDelegate.swift */,
 				6BDC8E5829DFDFDF00E42086 /* Info.plist */,
-				6B56CC8129EC3C800065D3BA /* Main.storyboard */,
 				6B56CC8329EC3C9F0065D3BA /* LaunchScreen.storyboard */,
 			);
 			path = GO_SOPT_Seminar_Assingment;
@@ -357,7 +349,6 @@
 				6B7DF9FD29E6935D00DF7C55 /* Pretendard-SemiBold.ttf in Resources */,
 				6BE8E85729E4934800D32CAE /* btn_before.png in Resources */,
 				6B56CCAA29ED1FA60065D3BA /* eye-slash.png in Resources */,
-				6B56CC8229EC3C800065D3BA /* Main.storyboard in Resources */,
 				6BE8E85929E4935100D32CAE /* tiving_logo.png in Resources */,
 				6B56CCA829ED1F060065D3BA /* x-circle.png in Resources */,
 				6B56CCAC29ED1FEB0065D3BA /* eye-non-slash.png in Resources */,
@@ -385,6 +376,7 @@
 				6BDC8E4B29DFDFDE00E42086 /* AppDelegate.swift in Sources */,
 				6B1C7E1029EABEAD0034A336 /* AddNickNameBottomSheetUIView.swift in Sources */,
 				6B56CC8629EC5B0E0065D3BA /* CustomTextField.swift in Sources */,
+				6B50BE5029F130F300320D37 /* BottomSheetHeight.swift in Sources */,
 				6B56CCAE29ED20500065D3BA /* String+.swift in Sources */,
 				6BDC8E6029DFE15F00E42086 /* SecondViewController.swift in Sources */,
 				6B56CC9A29EC79C30065D3BA /* CustomPasswordTextField.swift in Sources */,
@@ -533,7 +525,6 @@
 				INFOPLIST_FILE = GO_SOPT_Seminar_Assingment/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -561,7 +552,6 @@
 				INFOPLIST_FILE = GO_SOPT_Seminar_Assingment/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

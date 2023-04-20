@@ -7,9 +7,21 @@
 
 import UIKit
 
+import SnapKit
+import Then
+
 class AddNickNameBottomSheetUIView: UIView {
     
     public let bottomSheetHeight = UIScreen.main.bounds.height / 2
+    
+    public let dimmendView = UIView().then {
+        $0.backgroundColor = .black.withAlphaComponent(0.5)
+    }
+    
+    public lazy var dragIndicatior = UIView().then {
+        $0.backgroundColor = .tvingGray1
+        $0.layer.cornerRadius = 3
+    }
     
     public let bottomSheetView = UIView().then {
         $0.backgroundColor = .white
@@ -56,20 +68,30 @@ class AddNickNameBottomSheetUIView: UIView {
 private extension AddNickNameBottomSheetUIView {
     
     func style() {
-        self.backgroundColor = .black.withAlphaComponent(0.5)
+
     }
     
     func hierarchy() {
-        self.addSubview(bottomSheetView)
+        self.addSubviews(dimmendView, dragIndicatior, bottomSheetView)
         bottomSheetView.addSubviews(nickNameMainLabel, nickNameTextField, saveNickNameBtn)
     }
     
     func setLayout() {
         
+        dimmendView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        
         bottomSheetView.snp.makeConstraints {
             $0.height.equalTo(bottomSheetHeight)
             $0.bottom.left.right.equalToSuperview()
-            $0.top.equalToSuperview().inset(UIEdgeInsets(top: UIScreen.main.bounds.height - bottomSheetHeight, left: 0, bottom: 0, right: 0))
+            $0.top.equalToSuperview().inset(UIScreen.main.bounds.height - bottomSheetHeight)
+        }
+        
+        dragIndicatior.snp.makeConstraints {
+            $0.height.equalTo(5)
+            $0.leading.trailing.equalToSuperview().inset(120)
+            $0.bottom.equalTo(bottomSheetView.snp.top).inset(-10)
         }
 
         nickNameMainLabel.snp.makeConstraints {

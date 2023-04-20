@@ -46,6 +46,9 @@ class LoginViewController_TVING: BaseViewController {
         nickNameBottomSheet.nickNameTextField.addTarget(self, action: #selector(textFieldDidChange), for: .allEditingEvents)
         
         nickNameBottomSheet.saveNickNameBtn.addTarget(self, action: #selector(tappedSavedNickNameBtn), for: .touchUpInside)
+        
+        let bottomSheetBackgroundTap = UITapGestureRecognizer(target: self, action: #selector(TappedBottomSheetBackground))
+        nickNameBottomSheet.dimmendView.addGestureRecognizer(bottomSheetBackgroundTap)
     }
     
     // MARK: - Lift Cycle
@@ -94,6 +97,10 @@ private extension LoginViewController_TVING {
     @objc
     func tappedSavedNickNameBtn() {
         saveUserNickName()
+        hideBottomSheet()
+    }
+    
+    @objc func TappedBottomSheetBackground(_ tapRecognizer: UITapGestureRecognizer) {
         hideBottomSheet()
     }
     
