@@ -16,7 +16,7 @@ final class WelcomeViewController: BaseViewController {
     // MARK: - Target
 
     private func target() {
-        mainView.goToMainBtn.addTarget(self, action: #selector(tappedGoToMainBtn()), for: .touchUpInside)
+        mainView.goToMainBtn.addTarget(self, action: #selector(tappedGoToMainBtn), for: .touchUpInside)
     }
 
     // MARK: - Lift Cycle
