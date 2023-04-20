@@ -11,21 +11,21 @@ import SnapKit
 import Then
 
 struct TvingUserInfo {
-    var id: String = ""
-    var password: String = ""
-    var nickName: String = ""
+    var id: String?
+    var password: String?
+    var nickName: String?
 }
 
-class LoginViewController_TVING: BaseViewController {
+final class LoginViewController_TVING: BaseViewController {
     
     // MARK: - Property
     
     private let mainView = LoginView()
     private let nickNameBottomSheet = AddNickNameBottomSheetUIView()
     
-    public var user = TvingUserInfo()
+    var user = TvingUserInfo()
 
-    private var keyboardHeight: Double = 0.0
+    private var bottomSheetKeyboardEnable: Bool = false
     
     // MARK: - Target
     
@@ -85,7 +85,7 @@ private extension LoginViewController_TVING {
     func tappedLogInBtn() {
         saveUserEmail()
         let welcomViewController = WelcomeViewController()
-        welcomViewController.idDataBind(idOrNick: user.nickName == "" ? user.id : user.nickName)
+        welcomViewController.idDataBind(idOrNick: getNickNameOrId())
         self.navigationController?.pushViewController(welcomViewController, animated: true)
     }
     
@@ -107,12 +107,14 @@ private extension LoginViewController_TVING {
     @objc func keyboardWillShow(notification: NSNotification) {
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
         if (nickNameBottomSheet.nickNameTextField.isSelected){
+            bottomSheetKeyboardEnable = true
             nickNameBottomSheet.bottomSheetView.frame.origin.y = UIScreen.main.bounds.height - (nickNameBottomSheet.bottomSheetHeight + keyboardSize.height)
         }
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
         if (nickNameBottomSheet.nickNameTextField.isSelected){
+            bottomSheetKeyboardEnable = true
             nickNameBottomSheet.bottomSheetView.frame.origin.y = UIScreen.main.bounds.height - nickNameBottomSheet.bottomSheetHeight
         }
     }
@@ -127,6 +129,15 @@ private extension LoginViewController_TVING {
     func saveUserNickName() {
         guard let nickName = nickNameBottomSheet.nickNameTextField.text else { return }
         user.nickName = nickName
+    }
+    
+    func getNickNameOrId() -> String {
+        if let nickName = user.nickName {
+            return nickName
+        } else {
+            guard let id = user.id else { return "" }
+            return id
+        }
     }
     
     func showBottomSheet() {
@@ -152,10 +163,11 @@ private extension LoginViewController_TVING {
     }
     
     func initView() {
-        mainView.idTextField.text = ""
-        mainView.passwordTextField.text = ""
+        mainView.idTextField.text = nil
+        mainView.passwordTextField.text = nil
+        nickNameBottomSheet.nickNameTextField.text = nil
+        user = TvingUserInfo()
         mainView.logInBtn.enableDisableButtonSet(isEnable: false, setColor: .black, setTextColor: .tvingGray2)
-        nickNameBottomSheet.nickNameTextField.text = ""
     }
     
     func setKeyboardObserver() {

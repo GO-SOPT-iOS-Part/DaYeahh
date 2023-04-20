@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WelcomeViewController: BaseViewController {
+final class WelcomeViewController: BaseViewController {
     
     // MARK: - Property
 
@@ -16,7 +16,7 @@ class WelcomeViewController: BaseViewController {
     // MARK: - Target
 
     private func target() {
-        mainView.goToMainBtn.addTarget(self, action: #selector(tappedGoToMainBtn), for: .touchUpInside)
+        mainView.goToMainBtn.addTarget(self, action: #selector(tappedGoToMainBtn()), for: .touchUpInside)
     }
 
     // MARK: - Lift Cycle
@@ -40,6 +40,6 @@ extension WelcomeViewController {
     
     @objc
     func tappedGoToMainBtn() {
-        self.navigationController?.popViewController(animated: true)
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }

@@ -108,7 +108,16 @@ private extension LoginView {
     }
     
     func hierarchy() {
-        self.addSubviews(mainLabel, idTextField, idInvalidLabel, passwordTextField, logInBtn, findIdBtn, findPasswordBtn, askExistAccountLabel, goToMakeNicknameBtn, backBtn)
+        self.addSubviews(mainLabel,
+                         idTextField,
+                         idInvalidLabel,
+                         passwordTextField,
+                         logInBtn,
+                         findIdBtn,
+                         findPasswordBtn,
+                         askExistAccountLabel,
+                         goToMakeNicknameBtn,
+                         backBtn)
     }
     
     func setLayout() {

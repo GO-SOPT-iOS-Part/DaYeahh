@@ -72,8 +72,12 @@ private extension AddNickNameBottomSheetUIView {
     }
     
     func hierarchy() {
-        self.addSubviews(dimmendView, dragIndicatior, bottomSheetView)
-        bottomSheetView.addSubviews(nickNameMainLabel, nickNameTextField, saveNickNameBtn)
+        self.addSubviews(dimmendView,
+                         dragIndicatior,
+                         bottomSheetView)
+        bottomSheetView.addSubviews(nickNameMainLabel,
+                                    nickNameTextField,
+                                    saveNickNameBtn)
     }
     
     func setLayout() {

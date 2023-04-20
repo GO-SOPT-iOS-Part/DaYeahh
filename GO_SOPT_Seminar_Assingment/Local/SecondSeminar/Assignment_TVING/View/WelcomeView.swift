@@ -49,7 +49,9 @@ private extension WelcomeView {
     }
     
     func hierarchy() {
-        self.addSubviews(mainImgView, welcomeLabel, goToMainBtn)
+        self.addSubviews(mainImgView,
+                         welcomeLabel,
+                         goToMainBtn)
     }
     
     func setLayout() {
