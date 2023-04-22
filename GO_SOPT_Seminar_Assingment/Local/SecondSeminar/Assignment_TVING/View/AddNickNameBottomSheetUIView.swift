@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class AddNickNameBottomSheetUIView: UIView {
+final class AddNickNameBottomSheetUIView: UIView {
     
     public let bottomSheetHeight = UIScreen.main.bounds.height / 2
     

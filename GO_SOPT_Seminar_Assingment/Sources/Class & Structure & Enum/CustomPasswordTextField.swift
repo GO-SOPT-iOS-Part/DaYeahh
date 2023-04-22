@@ -27,12 +27,16 @@ class CustomPasswordTextField: UITextField {
         $0.addTarget(self, action: #selector(self.securityTextField), for: .touchUpInside)
     }
     
+    private func target() {
+        self.addTarget(self, action: #selector(self.textFieldDidChange), for: .allEditingEvents)
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.addTarget(self, action: #selector(self.textFieldDidChange), for: .allEditingEvents)
         
         style()
         setLayout()
+        target()
     }
     
     required init?(coder: NSCoder) {

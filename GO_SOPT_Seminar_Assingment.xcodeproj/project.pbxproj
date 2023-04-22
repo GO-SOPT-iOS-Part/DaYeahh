@@ -141,6 +141,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		6B50BE5329F3A2C700320D37 /* ThirdSeminar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ThirdSeminar;
+			sourceTree = "<group>";
+		};
 		6B56CC7C29EC02B50065D3BA /* Class & Structure & Enum */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +160,7 @@
 		6B56CC7D29EC38D20065D3BA /* Local */ = {
 			isa = PBXGroup;
 			children = (
+				6B50BE5329F3A2C700320D37 /* ThirdSeminar */,
 				6BDC8E5E29DFDFF000E42086 /* FirstSeminar */,
 				6BDC8E6329E133A300E42086 /* SecondSeminar */,
 			);

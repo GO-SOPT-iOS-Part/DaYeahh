@@ -32,10 +32,4 @@ public extension UITextField {
         self.rightViewMode = .always
     }
     
-    // TextField 비어있나 확인
-    func isEmpty() -> Bool {
-        let empty: Bool = self.text == "" ? true : false
-        return empty
-    }
-    
 }

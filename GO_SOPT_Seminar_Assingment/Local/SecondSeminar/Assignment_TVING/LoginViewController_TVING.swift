@@ -200,14 +200,16 @@ extension LoginViewController_TVING: UITextFieldDelegate {
     @objc
     func textFieldDidChange(_ textField: UITextField) {
         
-        if (!(nickNameBottomSheet.nickNameTextField.text?.isValidNickName() ?? false)){
-            nickNameBottomSheet.nickNameTextField.text = ""
+        if let nickNameText = nickNameBottomSheet.nickNameTextField.text {
+            if (!nickNameText.isValidNickName()) {
+                nickNameBottomSheet.nickNameTextField.text = nil
+            }
         }
         
         // 버튼 활성화 -> 이 부분을 간결하게 줄일 수 있을 것 같은데 감이 안옴...!!!
         
-        let saveIdPwBtnEnable = !mainView.idTextField.isEmpty() && !mainView.passwordTextField.isEmpty() && mainView.idTextField.text?.isValidEmail() ?? false
-        let saveNickNameBtnEnable = !nickNameBottomSheet.nickNameTextField.isEmpty()
+        let saveIdPwBtnEnable = !mainView.idTextField.hasText && !mainView.passwordTextField.hasText && mainView.idTextField.text?.isValidEmail() ?? false
+        let saveNickNameBtnEnable = !nickNameBottomSheet.nickNameTextField.hasText
     
         if (saveIdPwBtnEnable) {
             mainView.logInBtn.enableDisableButtonSet(isEnable: saveIdPwBtnEnable, setColor: .tvingRed, setTextColor: .white)
@@ -219,12 +221,11 @@ extension LoginViewController_TVING: UITextFieldDelegate {
         }else {
             nickNameBottomSheet.saveNickNameBtn.enableDisableButtonSet(isEnable: saveNickNameBtnEnable, setColor: .black, setTextColor: .tvingGray2)
         }
-                
     }
     
     func idValidPrint() {
         
-        if (!(mainView.idTextField.text?.isValidEmail() ?? false) && !mainView.idTextField.isEmpty()) {
+        if (!(mainView.idTextField.text?.isValidEmail() ?? false) && !mainView.idTextField.hasText) {
             mainView.idTextField.layer.borderColor = UIColor.tvingRed.cgColor
             mainView.idTextField.layer.borderWidth = 0.7
             
@@ -250,8 +251,6 @@ extension LoginViewController_TVING: UITextFieldDelegate {
                 $0.leading.trailing.equalToSuperview().inset(20)
             }
         }
-        
     }
-    
     
 }

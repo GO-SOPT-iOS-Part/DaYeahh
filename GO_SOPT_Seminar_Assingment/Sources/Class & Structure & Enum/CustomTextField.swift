@@ -20,12 +20,17 @@ class CustomTextField: UITextField {
         $0.addTarget(self, action: #selector(self.clearCustomTextField), for: .touchUpInside)
     }
     
+    private func target() {
+        self.addTarget(self, action: #selector(self.textFieldDidChange), for: .allEditingEvents)
+
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.addTarget(self, action: #selector(self.textFieldDidChange), for: .allEditingEvents)
         
         style()
         setLayout()
+        target()
     }
     
     required init?(coder: NSCoder) {
