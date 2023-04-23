@@ -13,7 +13,7 @@ class WelcomeView: UIView {
         $0.image = UIImage(named: "tiving_logo")
     }
     
-    public let welcomeLabel = UILabel().then {
+    let welcomeLabel = UILabel().then {
         $0.text = "님\n반가워요!"
         $0.textColor = .white
         $0.textAlignment = .center
@@ -21,7 +21,7 @@ class WelcomeView: UIView {
         $0.font = .tvingSemiBold(ofSize: 23)
     }
     
-    public lazy var goToMainBtn = UIButton().then {
+    lazy var goToMainBtn = UIButton().then {
         $0.setTitle("메인으로", for: .normal)
         $0.titleLabel?.font = .tvingMedium(ofSize: 14)
         $0.titleLabel?.textAlignment = .center

@@ -34,7 +34,7 @@ final class WelcomeViewController: BaseViewController {
 
 extension WelcomeViewController {
     
-    public func idDataBind(idOrNick: String) {
+    func idDataBind(idOrNick: String) {
         mainView.welcomeLabel.text = "\(idOrNick)님\n반가워요!"
     }
     

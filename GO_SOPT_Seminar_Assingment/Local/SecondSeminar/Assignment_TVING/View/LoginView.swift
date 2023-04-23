@@ -18,7 +18,7 @@ class LoginView: UIView {
         $0.textAlignment = .center
     }
     
-    public let idTextField = CustomTextField().then {
+    let idTextField = CustomTextField().then {
         $0.placeholder = "이메일"
         $0.setPlaceholderColor(.tvingGray2)
         $0.font = .tvingMedium(ofSize: 15)
@@ -27,14 +27,14 @@ class LoginView: UIView {
         $0.keyboardType = .emailAddress
     }
     
-    public let idInvalidLabel = UILabel().then {
+    let idInvalidLabel = UILabel().then {
         $0.textColor = .systemRed
         $0.font = .systemFont(ofSize: 12)
         $0.text = "* 올바르지 않은 이메일 형식입니다 😭"
         $0.isHidden = true
     }
     
-    public let passwordTextField = CustomPasswordTextField().then {
+    let passwordTextField = CustomPasswordTextField().then {
         $0.placeholder = "비밀번호"
         $0.setPlaceholderColor(.tvingGray2)
         $0.font = .tvingMedium(ofSize: 15)
@@ -43,7 +43,7 @@ class LoginView: UIView {
         $0.keyboardType = .asciiCapable
     }
     
-    public lazy var logInBtn = UIButton().then {
+    lazy var logInBtn = UIButton().then {
         $0.setTitle("로그인하기", for: .normal)
         $0.setTitleColor(.tvingGray2, for: .normal)
         $0.titleLabel?.font = .tvingMedium(ofSize: 14)
@@ -54,28 +54,42 @@ class LoginView: UIView {
         $0.isEnabled = false
     }
     
-    public lazy var findIdBtn = UIButton().then {
+    private let idPasswordStackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.distribution = .fill
+        $0.alignment = .center
+        $0.spacing = 40
+    }
+    
+    lazy var findIdBtn = UIButton().then {
         $0.setTitle("아이디 찾기", for: .normal)
         $0.setTitleColor(.tvingGray2, for: .normal)
         $0.titleLabel?.font = .tvingMedium(ofSize: 14)
         $0.titleLabel?.textAlignment = .center
     }
     
-    public lazy var findPasswordBtn = UIButton().then {
+    lazy var findPasswordBtn = UIButton().then {
         $0.setTitle("비밀번호 찾기", for: .normal)
         $0.setTitleColor(.tvingGray2, for: .normal)
         $0.titleLabel?.font = .tvingMedium(ofSize: 14)
         $0.titleLabel?.textAlignment = .center
     }
     
-    private let askExistAccountLabel = UILabel().then {
+    private let makeAccountStackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.distribution = .fill
+        $0.alignment = .center
+        $0.spacing = 20
+    }
+    
+    let askExistAccountLabel = UILabel().then {
         $0.text = "아직 계정이 없으신가요?"
         $0.font = .tvingRegular(ofSize: 14)
         $0.textColor = .tvingGray3
         $0.textAlignment = .center
     }
     
-    public lazy var goToMakeNicknameBtn = UIButton().then {
+    lazy var goToMakeNicknameBtn = UIButton().then {
         $0.setTitle("닉네임 만들러가기", for: .normal)
         $0.setTitleColor(.tvingGray2, for: .normal)
         $0.titleLabel?.font = .tvingRegular(ofSize: 14)
@@ -83,7 +97,7 @@ class LoginView: UIView {
         $0.setUnderline()
     }
     
-    private lazy var backBtn = UIButton().then {
+    lazy var backBtn = UIButton().then {
         $0.setImage(UIImage(named: "btn_before"), for: .normal)
     }
     
@@ -113,12 +127,15 @@ private extension LoginView {
                          idInvalidLabel,
                          passwordTextField,
                          logInBtn,
-                         findIdBtn,
-                         findPasswordBtn,
-                         askExistAccountLabel,
-                         goToMakeNicknameBtn,
+                         idPasswordStackView,
+                         makeAccountStackView,
                          backBtn)
+        idPasswordStackView.addArrangedSubviews(findIdBtn,
+                                               findPasswordBtn)
+        makeAccountStackView.addArrangedSubviews(askExistAccountLabel,
+                                                 goToMakeNicknameBtn)
     }
+    
     
     func setLayout() {
         
@@ -146,32 +163,16 @@ private extension LoginView {
             $0.leading.trailing.equalToSuperview().inset(20)
         }
         
-        findIdBtn.snp.makeConstraints{
-            $0.width.equalTo(70)
-            $0.height.equalTo(22)
-            $0.top.equalTo(logInBtn.snp.bottom).offset(31)
-            $0.leading.equalToSuperview().inset(85)
+        idPasswordStackView.snp.makeConstraints {
+            $0.height.equalTo(25)
+            $0.top.equalTo(logInBtn.snp.bottom).offset(30)
+            $0.centerX.equalToSuperview().inset(80)
         }
         
-        findPasswordBtn.snp.makeConstraints{
-            $0.width.equalTo(80)
-            $0.height.equalTo(22)
-            $0.top.equalTo(logInBtn.snp.bottom).offset(31)
-            $0.trailing.equalToSuperview().inset(85)
-        }
-        
-        askExistAccountLabel.snp.makeConstraints{
-            $0.width.equalTo(140)
-            $0.height.equalTo(22)
-            $0.top.equalTo(findIdBtn.snp.bottom).offset(28)
-            $0.leading.equalToSuperview().inset(50)
-        }
-        
-        goToMakeNicknameBtn.snp.makeConstraints{
-            $0.width.equalTo(128)
-            $0.height.equalTo(22)
-            $0.top.equalTo(findPasswordBtn.snp.bottom).offset(28)
-            $0.trailing.equalToSuperview().inset(50)
+        makeAccountStackView.snp.makeConstraints {
+            $0.height.equalTo(25)
+            $0.top.equalTo(idPasswordStackView.snp.bottom).offset(30)
+            $0.centerX.equalToSuperview().inset(50)
         }
         
         backBtn.snp.makeConstraints{
@@ -179,6 +180,26 @@ private extension LoginView {
             $0.width.equalTo(8)
             $0.top.equalTo(self.safeAreaLayoutGuide).inset(25)
             $0.leading.equalToSuperview().inset(24)
+        }
+        
+        findIdBtn.snp.makeConstraints{
+            $0.width.equalTo(70)
+            $0.height.equalTo(22)
+        }
+        
+        findPasswordBtn.snp.makeConstraints{
+            $0.width.equalTo(80)
+            $0.height.equalTo(22)
+        }
+        
+        askExistAccountLabel.snp.makeConstraints{
+            $0.width.equalTo(140)
+            $0.height.equalTo(22)
+        }
+        
+        goToMakeNicknameBtn.snp.makeConstraints{
+            $0.width.equalTo(128)
+            $0.height.equalTo(22)
         }
     }
 }

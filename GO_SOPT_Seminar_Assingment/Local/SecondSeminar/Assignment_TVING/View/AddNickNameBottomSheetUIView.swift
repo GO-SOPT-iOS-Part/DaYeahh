@@ -12,29 +12,29 @@ import Then
 
 final class AddNickNameBottomSheetUIView: UIView {
     
-    public let bottomSheetHeight = UIScreen.main.bounds.height / 2
+    let bottomSheetHeight = UIScreen.main.bounds.height / 2
     
-    public let dimmendView = UIView().then {
+    let dimmendView = UIView().then {
         $0.backgroundColor = .black.withAlphaComponent(0.5)
     }
     
-    public lazy var dragIndicatior = UIView().then {
+    private lazy var dragIndicatior = UIView().then {
         $0.backgroundColor = .tvingGray1
         $0.layer.cornerRadius = 3
     }
     
-    public let bottomSheetView = UIView().then {
+    let bottomSheetView = UIView().then {
         $0.backgroundColor = .white
         $0.layer.cornerRadius = 12
         $0.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]   // 좌우측 하단은 그대로
     }
     
-    public let nickNameMainLabel = UILabel().then {
+    private let nickNameMainLabel = UILabel().then {
         $0.text = "닉네임을 입력해주세요"
         $0.font = .tvingMedium(ofSize: 23)
     }
     
-    public let nickNameTextField = CustomTextField().then {
+    let nickNameTextField = CustomTextField().then {
         $0.placeholder = "닉네임"
         $0.setPlaceholderColor(.tvingGray1)
         $0.textColor = .black
@@ -42,7 +42,7 @@ final class AddNickNameBottomSheetUIView: UIView {
         $0.font = .tvingMedium(ofSize: 14)
     }
     
-    public lazy var saveNickNameBtn = UIButton().then {
+    lazy var saveNickNameBtn = UIButton().then {
         $0.setTitle("저장하기", for: .normal)
         $0.titleLabel?.font = .tvingMedium(ofSize: 16)
         $0.titleLabel?.textAlignment = .center
@@ -115,7 +115,5 @@ private extension AddNickNameBottomSheetUIView {
             $0.leading.trailing.equalToSuperview().inset(20)
         }
     }
-    
-    
     
 }

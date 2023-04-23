@@ -24,7 +24,7 @@ final class LoginViewController_TVING: BaseViewController {
     private let nickNameBottomSheet = AddNickNameBottomSheetUIView()
     
     var user = TvingUserInfo()
-
+    
     private var bottomSheetKeyboardEnable: Bool = false
     
     // MARK: - Target
@@ -140,6 +140,11 @@ private extension LoginViewController_TVING {
         }
     }
     
+    func isIDValid() -> Bool {
+        guard let id = mainView.idTextField.text else { return false }
+        return id.isValidEmail()
+    }
+    
     func showBottomSheet() {
         nickNameBottomSheet.nickNameTextField.isSelected = true
         nickNameBottomSheet.snp.remakeConstraints {
@@ -191,14 +196,13 @@ extension LoginViewController_TVING: UITextFieldDelegate {
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         textField.layer.borderWidth = 0
         
-        // id 형식 검사
         idValidPrint()
             
         return true
     }
     
     @objc
-    func textFieldDidChange(_ textField: UITextField) {
+    private func textFieldDidChange(_ textField: UITextField) {
         
         if let nickNameText = nickNameBottomSheet.nickNameTextField.text {
             if (!nickNameText.isValidNickName()) {
@@ -206,16 +210,17 @@ extension LoginViewController_TVING: UITextFieldDelegate {
             }
         }
         
-        // 버튼 활성화 -> 이 부분을 간결하게 줄일 수 있을 것 같은데 감이 안옴...!!!
+        let idPwIsFull: Bool = mainView.idTextField.hasText && !mainView.passwordTextField.hasText
+        let saveIdPwBtnEnable: Bool = idPwIsFull && isIDValid()
         
-        let saveIdPwBtnEnable = !mainView.idTextField.hasText && !mainView.passwordTextField.hasText && mainView.idTextField.text?.isValidEmail() ?? false
-        let saveNickNameBtnEnable = !nickNameBottomSheet.nickNameTextField.hasText
-    
         if (saveIdPwBtnEnable) {
             mainView.logInBtn.enableDisableButtonSet(isEnable: saveIdPwBtnEnable, setColor: .tvingRed, setTextColor: .white)
         }else {
             mainView.logInBtn.enableDisableButtonSet(isEnable: saveIdPwBtnEnable, setColor: .black, setTextColor: .tvingGray2)
         }
+        
+        let saveNickNameBtnEnable = !nickNameBottomSheet.nickNameTextField.hasText
+    
         if (saveNickNameBtnEnable) {
             nickNameBottomSheet.saveNickNameBtn.enableDisableButtonSet(isEnable: saveNickNameBtnEnable, setColor: .tvingRed, setTextColor: .white)
         }else {
@@ -223,7 +228,7 @@ extension LoginViewController_TVING: UITextFieldDelegate {
         }
     }
     
-    func idValidPrint() {
+    private func idValidPrint() {
         
         if (!(mainView.idTextField.text?.isValidEmail() ?? false) && !mainView.idTextField.hasText) {
             mainView.idTextField.layer.borderColor = UIColor.tvingRed.cgColor
