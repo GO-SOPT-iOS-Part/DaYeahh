@@ -191,7 +191,7 @@ extension LoginViewController_TVING: UITextFieldDelegate {
         textField.layer.borderColor = UIColor.tvingGray2.cgColor
         textField.layer.borderWidth = 0.7
     }
-    
+
     // textField 비활성화되면
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         textField.layer.borderWidth = 0
